@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="mang[]" id="a" placeholder="Nhập a">
+    <input type="number" name="mang1[]" id="b" placeholder="Nhập b">
+    
+    <button onclick="Adda()">AddA</button>
+    <button onclick="Addb()">AddB</button>
+    <button onclick="CongMang()">Cọng mảng</button>
+    <div id="Result">Hiện mảng A:</div>
+    <div id="Result1">Hiện mảng B:</div>
+    <div id="Result2">Mảng A + Mảng B</div>
+    <script>
+        let x = 0;
+        let arrayA = Array();
+        function Adda()
+        {
+            arrayA[x] = document.getElementById("a").value;
+            x++;
+            let e= "<br>";
+            for( let i = 0; i < arrayA.length; i++){
+                e+= arrayA[i];
+            } document.getElementById("Result").innerHTML = arrayA.join();
+        }
+            let y = 0;
+            let arrayB = Array();
+           function Addb()
+        {
+            arrayB[y] = document.getElementById("b").value;
+            y++;
+            let f= "<br>";
+            for( let j = 0; j < arrayB.length;j++){
+                f+= arrayB[j];
+            } document.getElementById("Result1").innerHTML = arrayB.join();
+        }   
+        var ketnoi= [];
+            function CongMang(){
+                ketnoi= arrayA.concat(arrayB)
+                document.getElementById("Result2").innerHTML= ketnoi.join();
+            }
+    </script>
+</html>
